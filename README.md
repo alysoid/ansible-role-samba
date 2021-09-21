@@ -4,21 +4,22 @@ Setup Samba as file server and manage [smb.conf](https://man.archlinux.org/man/s
 
 ## Role variables
 
-| Variable            | Default   | Info
-| ----------------    | --------- | ----------------
-| `samba_shares`      | `[]`      | List of dicts with shares definitions.
+| Variable             | Default   | Info
+| ----------------     | --------- | ----------------
+| `samba_shares`       | `[]`      | List of dicts with shares definitions.
+| `samba_username_map` | `[]`      | List of dicts with username maps.
 
 ---
 
 ### `samba_shares`
 
-Define a list of dicts with shares definitions that will be mounted by Samba:
+Define a list of dicts with shares definitions that will be used by Samba:
 
 ```yaml
 samba_shares:
   # Name of the shared resource
   - name: Storage
-    # Unix dictionary of the share
+    # Unix directory of the share
     path: /mnt/storage
     # Space separated list of users allowed to login
     valid_users: "{{ samba_username }}"
@@ -28,4 +29,16 @@ samba_shares:
     browseable: 'yes'
     # Define if users can create or modify files in the directory
     writable: 'yes'
+```
+
+### `samba_username_map`
+
+List of dicts with Windows usernames mapped to Unix ones:
+
+```yaml
+samba_username_map:
+  # Space separated list of Windows username to map
+  - from: admin administrator
+    # Unix username to associate with Windows ones
+    to: root
 ```

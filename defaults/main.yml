@@ -1,5 +1,6 @@
 samba_config_dir: '/etc/samba'
 samba_config_file: "{{ samba_config_dir }}/smb.conf"
+samba_username_map_file: "{{ samba_config_dir }}/smbusers"
 
 samba_workgroup: 'WORKGROUP'
 samba_server_string: 'Fileserver %h'
