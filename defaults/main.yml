@@ -1,0 +1,18 @@
+samba_config_dir: '/etc/samba'
+samba_config_file: "{{ samba_config_dir }}/smb.conf"
+
+samba_workgroup: 'WORKGROUP'
+samba_server_string: 'Fileserver %h'
+
+samba_log_file: '/dev/stdout'
+samba_log_size: '50'
+samba_log_level: '0'
+
+samba_security: 'user'
+samba_passdb_backend: 'tdbsam'
+samba_map_to_guest: 'never'
+
+samba_veto_files: '/.apdisk/.DS_Store/.TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/Network Trash Folder/Temporary Items/Thumbs.db/'
+
+samba_shares_root: '/mnt'
+samba_shares: []
