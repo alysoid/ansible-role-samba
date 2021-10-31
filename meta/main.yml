@@ -1,0 +1,20 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: Andrea Brandi
+  description: Setup Samba as file server and manage smb.conf - The configuration file for the Samba suite.
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+  - name: ArchLinux
+    versions:
+    - all
+  galaxy_tags:
+    - system
+    - samba
+    - share
+    - files
+    - fileshare
+    - networking
+    - windows
